@@ -6,31 +6,35 @@ public class Movements : MonoBehaviour
 {
     int fullnumber;
     float floatnumber;
-
     public float speed; 
+    public Rigidbody rigidbody;
 
-    public Rigidbody Rigidbody;
     // Start is called before the first frame update
     void Start()
     {
-
+        rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D))
         {
-            transform.position = new Vector3(transform.position.x + floatnumber, transform.position.y, transform.position.z);
-            transform.Translate(1 * Time.deltatime * speed, 0, 0);
+
+            rigidbody.aAddForce(1 * Time.deltaTime * speed, 0, 0, ForceMode.Impulse);
+
+            //transform.position = new Vector3(transform.position.x + floatnumber, transform.position.y, transform.position.z);
+            //transform.Translate(1 * Time.deltatime * speed, 0, 0);
 
 
             Debug.Log("D Pressed)");
         }
-        if (input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A))
         {
-            transform.position = new Vector3(transform.position.x + floatnumber, transform.position.y, transform.position.z);
-            transform.Translate(-1 * Time.deltatime * speed, 0, 0);
+            rigidbody.aAddForce(-1 * Time.deltaTime * speed, 0, 0, ForceMode.Impulse);
+
+            //transform.position = new Vector3(transform.position.x + floatnumber, transform.position.y, transform.position.z);
+            //transform.Translate(-1 * Time.deltatime * speed, 0, 0);
 
 
             Debug.Log("A Pressed)");
