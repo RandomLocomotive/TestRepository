@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     int liczbacalkowita; // np. 1,2,54,76
     float liczbaprzecinkowa = 0.1f; // np, 4.32423, 56.23423
 
-    public float speed = 7;
+    public float speed = 8;
 
     public Rigidbody rigidbody;
 
