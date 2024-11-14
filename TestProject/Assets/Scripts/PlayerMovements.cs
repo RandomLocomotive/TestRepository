@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
     int liczbacalkowita; // np. 1,2,54,76
     float liczbaprzecinkowa = 0.1f; // np, 4.32423, 56.23423
 
-    public float speed = 5;
+    public float speed = 7;
 
     public Rigidbody rigidbody;
 
-    public Transform startPoint;
+    public Transform StartPoint;
 
     public int zebranePunkty;
 
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y < 0)
         {
-            transform.position = startPoint.position;
+            transform.position = StartPoint.position;
             rigidbody.velocity = Vector3.zero;
 
 
